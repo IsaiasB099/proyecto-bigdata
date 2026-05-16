@@ -1,0 +1,5 @@
+# DATABASE: proyecto_bigdata
+# USER: bigdata_user
+# PASSWORD: bigdata123
+# GRANT ALL PRIVILEGES ON DATABASE proyecto_bigdata WITH PASSWORD 'bigdata123';
+

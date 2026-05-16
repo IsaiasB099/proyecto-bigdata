@@ -1,0 +1,21 @@
+{"timestamp":"2026-05-15T22:11:30.864779Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-05-15T22:11:30.866679Z","level":"info","event":"Filling up the DagBag from /opt/repo/proyecto-bigdata/orchestration/airflow/dags/dag_nomina_pipeline.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-05-15T22:11:30.880306Z","level":"info","event":"Stats instance was created in PID 6329 but accessed in PID 6390. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-05-15T22:11:30.959299Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:30.959542Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:30.959714Z","level":"info","event":"Current task name:ejecutar_pentaho_etl","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:30.959771Z","level":"info","event":"Dag name:pipeline_nomina_funcionarios","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:31.000764Z","level":"info","event":"#######################################################################","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:31.000979Z","level":"info","event":"WARNING:  no libwebkitgtk-1.0 detected, some features will be unavailable","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:31.001085Z","level":"info","event":"    Consider installing the package with apt-get or yum.","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:31.001171Z","level":"info","event":"    e.g. 'sudo apt-get install libwebkitgtk-1.0-0'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:31.001217Z","level":"info","event":"#######################################################################","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:31.238615Z","level":"error","event":"OpenJDK 64-Bit Server VM warning: Ignoring option MaxPermSize; support was removed in 8.0","logger":"task.stderr"}
+{"timestamp":"2026-05-15T22:11:41.287160Z","level":"info","event":"2026/05/15 19:11:41 - Pan - Start of run.","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:42.044795Z","level":"info","event":"2026/05/15 19:11:42 - 01_carga_nomina_raw - Dispatching started for transformation [01_carga_nomina_raw]","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:42.950433Z","level":"info","event":"2026/05/15 19:11:42 - Table output 2.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:42.950892Z","level":"info","event":"2026/05/15 19:11:42 - Table output.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:42.953143Z","level":"info","event":"2026/05/15 19:11:42 - Table output 3.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:43.074190Z","level":"info","event":"2026/05/15 19:11:43 - CSV file input 2.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-02.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:43.075043Z","level":"info","event":"2026/05/15 19:11:43 - CSV file input 3.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-03.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:11:43.075962Z","level":"info","event":"2026/05/15 19:11:43 - CSV file input.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-01.csv'","logger":"task.stdout"}

@@ -1,0 +1,30 @@
+{"timestamp":"2026-05-15T22:39:38.929924Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-05-15T22:39:38.980883Z","level":"info","event":"Filling up the DagBag from /opt/repo/proyecto-bigdata/orchestration/airflow/dags/dag_nomina_pipeline.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-05-15T22:39:40.209589Z","level":"info","event":"Stats instance was created in PID 703 but accessed in PID 1288. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-05-15T22:39:40.851526Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:40.851743Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:40.853992Z","level":"info","event":"Current task name:ejecutar_pentaho_etl","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:40.854938Z","level":"info","event":"Dag name:pipeline_nomina_funcionarios","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:41.252640Z","level":"info","event":"#######################################################################","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:41.252889Z","level":"info","event":"WARNING:  no libwebkitgtk-1.0 detected, some features will be unavailable","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:41.252984Z","level":"info","event":"    Consider installing the package with apt-get or yum.","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:41.253080Z","level":"info","event":"    e.g. 'sudo apt-get install libwebkitgtk-1.0-0'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:41.253149Z","level":"info","event":"#######################################################################","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:39:42.002400Z","level":"error","event":"OpenJDK 64-Bit Server VM warning: Ignoring option MaxPermSize; support was removed in 8.0","logger":"task.stderr"}
+{"timestamp":"2026-05-15T22:41:13.295215Z","level":"info","event":"2026/05/15 19:41:13 - Pan - Start of run.","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:14.747928Z","level":"info","event":"2026/05/15 19:41:14 - 01_carga_nomina_raw - Dispatching started for transformation [01_carga_nomina_raw]","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:17.984177Z","level":"info","event":"2026/05/15 19:41:17 - Table output 3.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:17.986629Z","level":"info","event":"2026/05/15 19:41:17 - Table output.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:17.989245Z","level":"info","event":"2026/05/15 19:41:17 - Table output 2.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:42.697116Z","level":"info","event":"2026/05/15 19:41:42 - CSV file input 3.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-03.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:42.701240Z","level":"info","event":"2026/05/15 19:41:42 - CSV file input 2.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-02.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:42.701585Z","level":"info","event":"2026/05/15 19:41:42 - CSV file input.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-01.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:41:58.120459Z","level":"info","event":"2026/05/15 19:41:58 - CSV file input 3.0 - Line number : 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:52:58.998908Z","level":"info","event":"2026/05/15 19:41:58 - CSV file input 2.0 - Line number : 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:52:59.625790Z","level":"info","event":"2026/05/15 19:41:59 - CSV file input.0 - Line number : 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:53:02.508584Z","level":"info","event":"2026/05/15 19:42:10 - Select values.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:53:02.590763Z","level":"info","event":"2026/05/15 19:42:10 - Select values 3.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:53:02.590964Z","level":"info","event":"2026/05/15 19:42:14 - Select values 2.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:53:27.539361Z","level":"info","event":"2026/05/15 19:53:27 - Filter rows.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:53:40.451689Z","level":"info","event":"2026/05/15 19:53:40 - Filter rows 3.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:54:43.138093Z","level":"info","event":"2026/05/15 19:54:26 - Filter rows 2.0 - linenr 50000","logger":"task.stdout"}

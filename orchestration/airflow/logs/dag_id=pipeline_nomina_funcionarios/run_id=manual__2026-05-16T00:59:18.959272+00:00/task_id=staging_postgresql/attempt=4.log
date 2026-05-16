@@ -1,0 +1,16 @@
+{"timestamp":"2026-05-16T01:33:26.636058Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-05-16T01:33:26.640174Z","level":"info","event":"Filling up the DagBag from /opt/repo/proyecto-bigdata/orchestration/airflow/dags/dag_nomina_pipeline.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-05-16T01:33:26.685823Z","level":"info","event":"Stats instance was created in PID 654 but accessed in PID 2096. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-05-16T01:33:26.729099Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-05-16T01:33:26.729220Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-05-16T01:33:26.729437Z","level":"info","event":"Current task name:staging_postgresql","logger":"task.stdout"}
+{"timestamp":"2026-05-16T01:33:26.729507Z","level":"info","event":"Dag name:pipeline_nomina_funcionarios","logger":"task.stdout"}
+{"timestamp":"2026-05-16T01:33:27.107630Z","level":"error","event":"psql:/opt/repo/proyecto-bigdata/database/postgresql/ddl/nomina_staging.sql:2: NOTICE:  schema \"staging\" already exists, skipping","logger":"task.stderr"}
+{"timestamp":"2026-05-16T01:33:27.355817Z","level":"error","event":"psql:/opt/repo/proyecto-bigdata/database/postgresql/ddl/nomina_staging.sql:27: ERROR:  column \"documento\" does not exist","logger":"task.stderr"}
+{"timestamp":"2026-05-16T01:33:27.356037Z","level":"error","event":"LINE 5:     REGEXP_REPLACE(documento, '[^0-9]', '', 'g'), -- Remueve...","logger":"task.stderr"}
+{"timestamp":"2026-05-16T01:33:27.356117Z","level":"error","event":"                           ^","logger":"task.stderr"}
+{"timestamp":"2026-05-16T01:33:27.356157Z","level":"error","event":"HINT:  There is a column named \"documento\" in table \"nomina_funcionarios\", but it cannot be referenced from this part of the query.","logger":"task.stderr"}
+{"timestamp":"2026-05-16T01:33:27.362535Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":233}
+{"timestamp":"2026-05-16T01:33:27.382953Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-05-16T01:33:27.383083Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-05-16T01:33:27.383410Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): staging_postgresql>","logger":"task.stdout"}

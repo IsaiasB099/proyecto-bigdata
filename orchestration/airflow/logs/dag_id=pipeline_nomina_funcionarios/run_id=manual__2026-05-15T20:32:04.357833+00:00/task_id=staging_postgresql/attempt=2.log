@@ -1,0 +1,7 @@
+{"timestamp":"2026-05-15T21:17:51.171339Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-05-15T21:17:51.186022Z","level":"info","event":"Filling up the DagBag from /opt/repo/proyecto-bigdata/orchestration/airflow/dags/dag_nomina_pipeline.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-05-15T21:17:51.541386Z","level":"info","event":"Stats instance was created in PID 1559 but accessed in PID 2340. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-05-15T21:17:51.867621Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-05-15T21:17:51.867980Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-05-15T21:17:51.868911Z","level":"info","event":"Current task name:staging_postgresql","logger":"task.stdout"}
+{"timestamp":"2026-05-15T21:17:51.869104Z","level":"info","event":"Dag name:pipeline_nomina_funcionarios","logger":"task.stdout"}

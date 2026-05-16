@@ -1,0 +1,92 @@
+{"timestamp":"2026-05-15T22:28:32.098658Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-05-15T22:28:32.099786Z","level":"info","event":"Filling up the DagBag from /opt/repo/proyecto-bigdata/orchestration/airflow/dags/dag_nomina_pipeline.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-05-15T22:28:32.122498Z","level":"info","event":"Stats instance was created in PID 703 but accessed in PID 759. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-05-15T22:28:32.173690Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.173835Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.174153Z","level":"info","event":"Current task name:ejecutar_pentaho_etl","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.174218Z","level":"info","event":"Dag name:pipeline_nomina_funcionarios","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.188107Z","level":"info","event":"#######################################################################","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.188309Z","level":"info","event":"WARNING:  no libwebkitgtk-1.0 detected, some features will be unavailable","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.188378Z","level":"info","event":"    Consider installing the package with apt-get or yum.","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.188426Z","level":"info","event":"    e.g. 'sudo apt-get install libwebkitgtk-1.0-0'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.188514Z","level":"info","event":"#######################################################################","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:32.430782Z","level":"error","event":"OpenJDK 64-Bit Server VM warning: Ignoring option MaxPermSize; support was removed in 8.0","logger":"task.stderr"}
+{"timestamp":"2026-05-15T22:28:43.937966Z","level":"info","event":"2026/05/15 19:28:43 - Pan - Start of run.","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:44.930157Z","level":"info","event":"2026/05/15 19:28:44 - 01_carga_nomina_raw - Dispatching started for transformation [01_carga_nomina_raw]","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:46.323966Z","level":"info","event":"2026/05/15 19:28:46 - Table output.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:46.328135Z","level":"info","event":"2026/05/15 19:28:46 - Table output 2.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:46.328366Z","level":"info","event":"2026/05/15 19:28:46 - Table output 3.0 - Connected to database [nomina_funcionarios] (commit=1000)","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:46.576695Z","level":"info","event":"2026/05/15 19:28:46 - CSV file input 2.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-02.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:46.577273Z","level":"info","event":"2026/05/15 19:28:46 - CSV file input.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-01.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:28:46.599943Z","level":"info","event":"2026/05/15 19:28:46 - CSV file input 3.0 - Header row skipped in file '/opt/repo/proyecto-bigdata/data/raw/nomina/nomina_2026-03.csv'","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:29:02.231081Z","level":"info","event":"2026/05/15 19:29:02 - CSV file input.0 - Line number : 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:29:02.923490Z","level":"info","event":"2026/05/15 19:29:02 - CSV file input 3.0 - Line number : 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:30:03.610095Z","level":"info","event":"2026/05/15 19:29:56 - CSV file input 2.0 - Line number : 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:30:08.062134Z","level":"info","event":"2026/05/15 19:30:08 - Select values.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:30:08.343236Z","level":"info","event":"2026/05/15 19:30:08 - Select values 3.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:30:51.316655Z","level":"info","event":"2026/05/15 19:30:15 - Select values 2.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:30:51.330846Z","level":"info","event":"2026/05/15 19:30:23 - Filter rows.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:30:51.331656Z","level":"info","event":"2026/05/15 19:30:26 - Filter rows 3.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:30:51.331941Z","level":"info","event":"2026/05/15 19:30:50 - Filter rows 2.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:31:51.253594Z","level":"info","event":"2026/05/15 19:31:03 - Table output.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:31:51.445872Z","level":"info","event":"2026/05/15 19:31:49 - Table output 3.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:33:49.963936Z","level":"info","event":"2026/05/15 19:33:49 - CSV file input.0 - Line number : 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:31.899868Z","level":"info","event":"2026/05/15 19:33:50 - CSV file input 3.0 - Line number : 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:31.901076Z","level":"info","event":"2026/05/15 19:33:52 - Table output 2.0 - linenr 50000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:31.901237Z","level":"info","event":"2026/05/15 19:33:53 - Select values.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:31.901323Z","level":"info","event":"2026/05/15 19:33:53 - Select values 3.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:31.901891Z","level":"info","event":"2026/05/15 19:33:58 - CSV file input 2.0 - Line number : 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:31.902008Z","level":"info","event":"2026/05/15 19:33:59 - Filter rows 3.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:31.902076Z","level":"info","event":"2026/05/15 19:33:59 - Filter rows.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:34.074632Z","level":"info","event":"2026/05/15 19:34:32 - Select values 2.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:34.457703Z","level":"info","event":"2026/05/15 19:34:34 - Table output.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:35.297401Z","level":"info","event":"2026/05/15 19:34:35 - Table output 3.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:36.361684Z","level":"info","event":"2026/05/15 19:34:36 - Filter rows 2.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:37.485322Z","level":"info","event":"2026/05/15 19:34:37 - CSV file input.0 - Line number : 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:37.968408Z","level":"info","event":"2026/05/15 19:34:37 - CSV file input 3.0 - Line number : 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:39.196281Z","level":"info","event":"2026/05/15 19:34:39 - Select values.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:34:39.854958Z","level":"info","event":"2026/05/15 19:34:39 - Select values 3.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:29.790999Z","level":"info","event":"2026/05/15 19:34:48 - Table output 2.0 - linenr 100000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:30.096982Z","level":"info","event":"2026/05/15 19:34:49 - Filter rows.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:30.097333Z","level":"info","event":"2026/05/15 19:35:03 - Filter rows 3.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:30.097502Z","level":"info","event":"2026/05/15 19:35:07 - CSV file input 2.0 - Line number : 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:30.097575Z","level":"info","event":"2026/05/15 19:35:09 - Table output.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:30.337304Z","level":"info","event":"2026/05/15 19:35:10 - Table output 3.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:30.337570Z","level":"info","event":"2026/05/15 19:35:11 - CSV file input.0 - Line number : 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:31.071042Z","level":"info","event":"2026/05/15 19:35:13 - CSV file input 3.0 - Line number : 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:31.071344Z","level":"info","event":"2026/05/15 19:35:13 - Select values 2.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:31.071458Z","level":"info","event":"2026/05/15 19:35:14 - Select values.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:31.107602Z","level":"info","event":"2026/05/15 19:35:16 - Select values 3.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:31.107660Z","level":"info","event":"2026/05/15 19:35:22 - Filter rows.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:35:31.107696Z","level":"info","event":"2026/05/15 19:35:28 - Filter rows 2.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:08.287451Z","level":"info","event":"2026/05/15 19:35:45 - Filter rows 3.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:08.488932Z","level":"info","event":"2026/05/15 19:36:00 - Table output.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:13.063149Z","level":"info","event":"2026/05/15 19:36:01 - Table output 3.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.486427Z","level":"info","event":"2026/05/15 19:36:11 - CSV file input.0 - Line number : 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.488152Z","level":"info","event":"2026/05/15 19:36:27 - CSV file input 3.0 - Line number : 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.488507Z","level":"info","event":"2026/05/15 19:36:28 - Table output 2.0 - linenr 150000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.488617Z","level":"info","event":"2026/05/15 19:36:30 - Select values.0 - linenr 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.498488Z","level":"info","event":"2026/05/15 19:36:30 - Select values 3.0 - linenr 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.498782Z","level":"info","event":"2026/05/15 19:36:32 - Filter rows.0 - linenr 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.498895Z","level":"info","event":"2026/05/15 19:36:33 - Filter rows 3.0 - linenr 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.498961Z","level":"info","event":"2026/05/15 19:36:34 - CSV file input 2.0 - Line number : 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.504613Z","level":"info","event":"2026/05/15 19:36:42 - Table output.0 - linenr 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:36:49.504738Z","level":"info","event":"2026/05/15 19:36:42 - Table output 3.0 - linenr 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:04.323563Z","level":"info","event":"2026/05/15 19:37:04 - CSV file input 3.0 - Line number : 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:04.505072Z","level":"info","event":"2026/05/15 19:37:04 - Select values 2.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:04.647241Z","level":"info","event":"2026/05/15 19:37:04 - CSV file input.0 - Line number : 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:07.922019Z","level":"info","event":"2026/05/15 19:37:07 - Select values.0 - linenr 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:08.205786Z","level":"info","event":"2026/05/15 19:37:08 - Select values 3.0 - linenr 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:09.713781Z","level":"info","event":"2026/05/15 19:37:09 - Filter rows.0 - linenr 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:10.348777Z","level":"info","event":"2026/05/15 19:37:10 - Filter rows 2.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:12.207568Z","level":"info","event":"2026/05/15 19:37:12 - Filter rows 3.0 - linenr 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:13.958225Z","level":"info","event":"2026/05/15 19:37:13 - Table output.0 - linenr 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:16.931503Z","level":"info","event":"2026/05/15 19:37:16 - CSV file input.0 - Line number : 350000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:42.200523Z","level":"info","event":"2026/05/15 19:37:42 - Table output 3.0 - linenr 300000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:44.505408Z","level":"info","event":"2026/05/15 19:37:44 - Select values.0 - linenr 350000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:53.016370Z","level":"info","event":"2026/05/15 19:37:53 - Table output 2.0 - linenr 200000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:55.321308Z","level":"info","event":"2026/05/15 19:37:55 - Filter rows.0 - linenr 350000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:55.418073Z","level":"info","event":"2026/05/15 19:37:55 - CSV file input 3.0 - Line number : 350000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:55.683081Z","level":"info","event":"2026/05/15 19:37:55 - CSV file input 2.0 - Line number : 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:58.406840Z","level":"info","event":"2026/05/15 19:37:58 - Select values 2.0 - linenr 250000","logger":"task.stdout"}
+{"timestamp":"2026-05-15T22:37:59.963862Z","level":"info","event":"2026/05/15 19:37:59 - Select values 3.0 - linenr 350000","logger":"task.stdout"}
