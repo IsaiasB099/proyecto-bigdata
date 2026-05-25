@@ -1,0 +1,192 @@
+---
+title: "Dashboard de Analítica - Big Data Nómina"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: scroll
+---
+
+```{r setup, include=FALSE}
+library(DBI)
+library(duckdb)
+library(tidyverse)
+library(plotly)
+library(flexdashboard) 
+
+# 1. Conexión a la base de datos REAL
+con <- dbConnect(duckdb(), "/opt/repo/proyecto-bigdata/data/duckdb/bigdata_lab.duckdb", read_only = TRUE)
+
+# 2. Carga de los 3 Marts en memoria
+mart_masa    <- dbReadTable(con, "mart_masa_salarial")
+mart_perfil  <- dbReadTable(con, "mart_perfil_personal")
+mart_gasto   <- dbReadTable(con, "mart_conceptos_gasto")
+
+dbDisconnect(con, shutdown = TRUE)
+
+# 3. LIMPIEZA DE ENCODING CRUCIAL
+# Convierte de Latin1 (sistema de origen) a UTF-8 para arreglar los caracteres rotos
+mart_masa <- mart_masa %>% 
+  mutate(across(where(is.character), ~iconv(., from = "LATIN1", to = "UTF-8", sub = "")))
+
+mart_perfil <- mart_perfil %>% 
+  mutate(across(where(is.character), ~iconv(., from = "LATIN1", to = "UTF-8", sub = "")))
+
+mart_gasto <- mart_gasto %>% 
+  mutate(across(where(is.character), ~iconv(., from = "LATIN1", to = "UTF-8", sub = "")))
+```
+
+Row {data-height=150}
+-----------------------------------------------------------------------
+
+### Total Devengado Acumulado (Enero - Marzo)
+```{r}
+total_acumulado <- sum(mart_masa$total_devengado)
+valueBox(paste0(round(total_acumulado / 1e12, 2), " Billones Gs."), icon = "fa-money-bill")
+```
+
+Row {data-height=450}
+-----------------------------------------------------------------------
+
+### 1. Evolución de Masa Salarial Total (Enero a Marzo)
+```{r}
+df_ev_masa <- mart_masa %>%
+  mutate(mes = as.numeric(as.character(mes))) %>%
+  group_by(mes) %>%
+  summarise(total = sum(total_devengado) / 1e6)
+
+p1 <- ggplot(df_ev_masa, aes(x = mes, y = total)) +
+  geom_line(color = "#2c3e50", linewidth = 1) +
+  geom_point(color = "#e74c3c", size = 3) +
+  scale_x_continuous(breaks = 1:3, labels = c("Ene", "Feb", "Mar")) +
+  labs(x = "Mes", y = "Millones de Gs.") +
+  theme_minimal()
+
+print(p1)
+```
+
+### 2. Top 10 Unidades por Monto Devengado (Marzo)
+```{r}
+df_top_unidades <- mart_masa %>%
+  filter(mes == 3) %>%
+  group_by(descripcion_unidad) %>%
+  summarise(total = sum(total_devengado) / 1e6) %>%
+  slice_max(total, n = 10)
+
+p2 <- ggplot(df_top_unidades, aes(x = reorder(descripcion_unidad, total), y = total)) +
+  geom_col(fill = "#3498db") +
+  coord_flip() +
+  labs(x = "Unidad Responsable", y = "Millones de Gs.") +
+  theme_minimal()
+
+ggplotly(p2)
+```
+
+Row {data-height=550}
+-----------------------------------------------------------------------
+
+### 5. Distribución de Género M/F (Top 15 Entidades por Personal)
+```{r}
+top_entidades <- mart_perfil %>%
+  group_by(descripcion_entidad) %>%
+  summarise(total = sum(cantidad_funcionarios)) %>%
+  slice_max(total, n = 15) %>%
+  pull(descripcion_entidad)
+
+df_genero <- mart_perfil %>%
+  filter(descripcion_entidad %in% top_entidades) %>%
+  group_by(descripcion_entidad, sexo) %>%
+  summarise(cantidad = sum(cantidad_funcionarios), .groups = "drop")
+
+p5 <- ggplot(df_genero, aes(x = reorder(descripcion_entidad, cantidad), y = cantidad, fill = sexo)) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  coord_flip() + 
+  labs(x = "Entidad", y = "Porcentaje", fill = "Género") +
+  theme_minimal()
+
+ggplotly(p5)
+```
+
+### 6. Antigüedad Promedio por Entidad (Top 10)
+```{r}
+df_antiguedad <- mart_perfil %>%
+  group_by(descripcion_entidad) %>%
+  summarise(antiguedad = mean(antiguedad_promedio_anios, na.rm = TRUE)) %>%
+  slice_max(antiguedad, n = 10)
+
+p6 <- ggplot(df_antiguedad, aes(x = reorder(descripcion_entidad, antiguedad), y = antiguedad)) +
+  geom_col(fill = "#2ecc71") +
+  coord_flip() +
+  labs(x = "Entidad", y = "Años de Antigüedad") +
+  theme_minimal()
+
+ggplotly(p6)
+```
+
+Row {data-height=500}
+-----------------------------------------------------------------------
+
+### 7. Top 10 Conceptos de Gasto por Monto Total
+```{r}
+df_top_gasto <- mart_gasto %>%
+  group_by(concepto_gasto) %>%
+  summarise(total = sum(total_devengado) / 1e6) %>%
+  slice_max(total, n = 10)
+
+p7 <- ggplot(df_top_gasto, aes(x = reorder(concepto_gasto, total), y = total)) +
+  geom_col(fill = "#9b59b6") +
+  coord_flip() +
+  labs(x = "Concepto", y = "Millones de Gs.") +
+  theme_minimal()
+
+ggplotly(p7)
+```
+-------------------------------------------------------------------------
+
+### 8. Evolución Mensual: REMUNERACIONES vs GRATIFICACIONES
+```{r}
+df_sueldos_bonif <- mart_gasto %>%
+  mutate(
+    mes = as.numeric(as.character(mes)),
+    concepto_clean = toupper(concepto_gasto)
+  ) %>%
+  # Filtramos usando palabras clave para agrupar los conceptos reales de tu base de datos
+  filter(
+    str_detect(concepto_clean, "REMUNERACION") | str_detect(concepto_clean, "GRATIFICACIONES")
+  ) %>%
+  # Agrupamos en dos grandes categorías limpias para el gráfico
+  mutate(
+    categoria = if_else(str_detect(concepto_clean, "REMUNERACION"), "REMUNERACIONES / SUELDOS", "BONIFICACIONES / GRATIF.")
+  ) %>%
+  group_by(mes, categoria) %>%
+  summarise(total = sum(total_devengado) / 1e6, .groups = "drop") %>%
+  arrange(mes)
+
+# Graficamos las líneas con las categorías reales unificadas
+p8 <- ggplot(df_sueldos_bonif, aes(x = mes, y = total, color = categoria, group = categoria)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  scale_x_continuous(breaks = 1:3, labels = c("Ene", "Feb", "Mar")) +
+  labs(x = "Mes", y = "Millones de Gs.", color = "Concepto General") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+print(p8)
+```
+
+-----------------------------------------------------------------------
+
+### 4. Tabla: Saldo sin Ejecutar por Unidad (Top 15 Unidades)
+```{r}
+df_saldo <- mart_masa %>%
+  group_by(descripcion_unidad) %>%
+  summarise(
+    Presupuestado = sum(total_presupuestado),
+    Devengado = sum(total_devengado),
+    Saldo_Sin_Ejecutar = sum(saldo_sin_ejecutar)
+  ) %>%
+  arrange(desc(Saldo_Sin_Ejecutar)) %>%
+  slice_head(n = 15) # Limitamos a 15 para evitar una tabla kilométrica en el HTML
+
+knitr::kable(df_saldo)
+```
